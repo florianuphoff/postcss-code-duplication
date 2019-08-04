@@ -1,0 +1,64 @@
+.type1-1-1 {
+  width: 10px;
+}
+
+.type1-1-2 {
+  width: 10px;
+}
+
+.type1-2-1 {
+  width: 10px;
+  color: white;
+  padding-left: 20rem;
+}
+
+.type1-2-2 {
+  padding-left: 20rem;
+  width: 10px;
+  color: white;
+}
+
+.type2 {
+  color: violet;
+}
+
+.type2-2 {
+  color: #EE82EE;
+}
+
+.type3-1-1 {
+  padding: 2rem;
+}
+
+.type3-1-2 {
+  padding-top: 2rem;
+  padding-right: 2rem;
+  padding-bottom: 2rem;
+  padding-left: 2rem;
+}
+
+.type3-2-1 {
+  border-bottom: 1px solid red;
+}
+
+.type3-2-2 {
+  border-bottom-style: solid;
+  border-bottom-color: red;
+  border-bottom-width: 1px;
+}
+
+.type3-3-1 {
+  margin: 2rem 4rem 2rem 4rem;
+}
+
+.type3-3-2 {
+  margin: 2rem 4rem;
+}
+
+.type4 {
+  margin: 2px 1px 2px 1px;
+}
+
+.type4 {
+  margin-top: 2px;
+}

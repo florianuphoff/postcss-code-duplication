@@ -1,0 +1,41 @@
+{
+  "name": "postcss-code-duplication",
+  "version": "0.1.0",
+  "description": "This postcss plugin finds and reports different types of code duplication in your css files.",
+  "license": "MIT",
+  "repository": "florianuphoff/postcss-code-duplication",
+  "author": "Florian Uphoff <florianuphoff@mailbox.org>",
+  "homepage": "https://github.com/florianuphoff/postcss-code-duplication",
+  "main": "index.js",
+  "engines": {
+    "node": ">= 12.5.0"
+  },
+  "files": [
+    "index.js"
+  ],
+  "keywords": [
+    "analysis",
+    "css",
+    "postcss",
+    "lint",
+    "linter",
+    "plugin",
+    "postcss-plugin"
+  ],
+  "peerDependencies": {
+    "postcss": "^7.0.17"
+  },
+  "dependencies": {
+    "lodash": "^4.17.15"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "css-shorthand-expand": "^1.2.0",
+    "gulp": "^4.0.2",
+    "gulp-mocha": "^6.0.0",
+    "postcss": "^7.0.17"
+  },
+  "scripts": {
+    "test": "gulp"
+  }
+}

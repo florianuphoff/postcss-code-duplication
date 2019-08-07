@@ -14,8 +14,8 @@ npm install postcss-code-duplication  --save-dev
 After that call it as a plugin in postcss:
 
 ```javascript
-const postcss = require('postcss)
-const postcssCodeDuplication = require('postcss-code-duplication)
+const postcss = require('postcss')
+const postcssCodeDuplication = require('postcss-code-duplication')
 
 const plugins = [postcssCodeDuplication()]
 
@@ -125,7 +125,7 @@ Duplications are reported inside a returned object
 }
 ```
 
-`type4` contains an object only with with one key due to its nature of same selectors. Origin and duplication is always the same selector.
+`type4` contains an object only with one key due to its nature of same selectors. Origin and duplication is always the same selector.
 
 ## License
 MIT

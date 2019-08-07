@@ -1,6 +1,6 @@
 # postcss-code-duplication
-[![NPM version](https://img.shields.io/npm/v/stylelint-mixin-extend-usage.svg)](https://www.npmjs.com/package/stylelint-mixin-extend-usage)
-[![Downloads per month](https://img.shields.io/npm/dm/stylelint-mixin-extend-usage.svg)](http://npmcharts.com/compare/stylelint-mixin-extend-usage)
+[![NPM version](https://img.shields.io/npm/v/postcss-code-duplication.svg)](https://www.npmjs.com/package/postcss-code-duplication)
+<!-- [![Downloads per month](https://img.shields.io/npm/dm/postcss-code-duplication.svg)](http://npmcharts.com/compare/postcss-code-duplication) -->
 
 This plugin aims to detect different types of code duplication in your CSS.
 

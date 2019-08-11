@@ -83,8 +83,6 @@ module.exports = postcss.plugin('postcss-code-duplication', opts => {
       })
     }
 
-    console.log(JSON.stringify(duplications))
-
     result.warn('Found duplications', duplications)
   }
 })

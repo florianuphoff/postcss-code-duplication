@@ -38,9 +38,8 @@ module.exports = postcss.plugin('postcss-code-duplication', opts => {
     // type 1 - lexically same prop
     _.each(typeOne, (value, index, iteratee) => {
       const duplicate = _.find(iteratee, {hash: value.hash}, index + 1)
-      console.log(duplicate)
       if(duplicate) {
-        duplications.type1.push({ origin: value, duplication: duplicate })
+        duplications.type1.push({ origin: value, duplication: duplicate, originLine: value.line, originFile: value.file, duplLine: duplicate.line, duplFile: duplicate.file })
       }
     })
 
@@ -48,7 +47,7 @@ module.exports = postcss.plugin('postcss-code-duplication', opts => {
     _.each(hashedRules, (value, index, iteratee) => {
       const duplicate = _.find(iteratee, {hash: value.hash}, index + 1)
       if(duplicate) {
-        duplications.fullDuplication.push({ origin: value, duplication: duplicate })
+        duplications.fullDuplication.push({ origin: value, duplication: duplicate, originLine: value.line, originFile: value.file, duplLine: duplicate.line, duplFile: duplicate.file })
       }
     })
 
@@ -62,7 +61,7 @@ module.exports = postcss.plugin('postcss-code-duplication', opts => {
     _.each(shortLongProperties.shorthandHashes, (value, index, iteratee) => {
       const duplicate = _.find(iteratee, {hash: value.hash}, index + 1)
       if(duplicate) {
-        duplications.type3.push({ origin: value, duplication: duplicate })
+        duplications.type3.push({ origin: value, duplication: duplicate, originLine: value.line, originFile: value.file, duplLine: duplicate.line, duplFile: duplicate.file })
       }
     })
 
@@ -70,7 +69,7 @@ module.exports = postcss.plugin('postcss-code-duplication', opts => {
     _.each(shortLongProperties.shorthandHashes, (value) => {
       const duplicate = _.find(shortLongProperties.longhandHashes, {hash: value.hash})
       if(duplicate) {
-        duplications.type3.push({ origin: value, duplication: duplicate })
+        duplications.type3.push({ origin: value, duplication: duplicate, originLine: value.line, originFile: value.file, duplLine: duplicate.line, duplFile: duplicate.file })
       }
     })
 
@@ -79,7 +78,7 @@ module.exports = postcss.plugin('postcss-code-duplication', opts => {
     _.each(partialDuplications.longProperties, (value, index, iteratee) => {
       const duplicate = _.find(partialDuplications.shortProperties, {hash: value.hash})
       if(duplicate) {
-        duplications.type4.push({ origin: value })
+        duplications.type4.push({ origin: value, originLine: value.line, originFile: value.file })
       }
     })
 
@@ -90,7 +89,7 @@ module.exports = postcss.plugin('postcss-code-duplication', opts => {
       _.each(partialDuplications.shortProperties, (value, index, iteratee) => {
         const duplicate = _.find(iteratee, {hash: value.hash}, index + 1)
         if(duplicate) {
-          duplications.type5.push({ origin: value })
+          duplications.type5.push({ origin: value, originLine: value.line, originFile: value.file })
         }
       })
     }

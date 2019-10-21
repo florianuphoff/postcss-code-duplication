@@ -3,6 +3,7 @@
 const postcss = require('postcss')
 const _ = require('lodash')
 const selectorList = require('./lib/selectorList')
+const typeOneList = require('./lib/typeOne')
 const hashedRulesList = require('./lib/hashedRules')
 const shortLongPropertiesList = require('./lib/longhandPropertiesList')
 const partialPropertiesList = require('./lib/partialProperties')
@@ -21,22 +22,33 @@ module.exports = postcss.plugin('postcss-code-duplication', opts => {
 
     let duplications = {
       type1: [],
+      fullDuplication: [],
       type2: [],
       type3: [],
       type4: [],
       type5: []
     }
     const selectorMap = selectorList(root, opts)
-    const hashedRules = hashedRulesList(root, opts) // type 1
+    const typeOne = typeOneList(root, opts) // type 1 - only props
+    const hashedRules = hashedRulesList(root, opts) // type 1 - full
     // const alternativeValues = alternativeValuesList(root, opts) // type 2
     const shortLongProperties = shortLongPropertiesList(root, opts) // type 3
     const partialDuplications = partialPropertiesList(root, selectorMap, opts) // type 4
 
-    // type 1 - full duplication
+    // type 1 - lexically same prop
+    _.each(typeOne, (value, index, iteratee) => {
+      const duplicate = _.find(iteratee, {hash: value.hash}, index + 1)
+      console.log(duplicate)
+      if(duplicate) {
+        duplications.type1.push({ origin: value, duplication: duplicate })
+      }
+    })
+
+    // type 1-b - full duplication
     _.each(hashedRules, (value, index, iteratee) => {
       const duplicate = _.find(iteratee, {hash: value.hash}, index + 1)
       if(duplicate) {
-        duplications.type1.push({ origin: value, duplication: duplicate })
+        duplications.fullDuplication.push({ origin: value, duplication: duplicate })
       }
     })
 

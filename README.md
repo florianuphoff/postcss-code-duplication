@@ -64,7 +64,7 @@ Activate it by passing the option `typeTwoDuplication: true`
 ```
 
 #### typeThreeDuplication
-A set of individual-property declarations is equivalent with a shorthand-property declaration.
+A set of individual-property declarations is equivalent to a shorthand-property declaration.
 
 Activate it by passing the option `typeThreeDuplication: true`
 

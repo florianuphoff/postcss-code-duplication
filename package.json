@@ -24,7 +24,7 @@
     "postcss-plugin"
   ],
   "peerDependencies": {
-    "postcss": "^7.0.17"
+    "postcss": "^8.2.10"
   },
   "dependencies": {
     "jsdom": "^15.1.1",
@@ -35,7 +35,7 @@
     "css-shorthand-expand": "^1.2.0",
     "gulp": "^4.0.2",
     "gulp-mocha": "^6.0.0",
-    "postcss": "^7.0.17"
+    "postcss": "^8.2.10"
   },
   "scripts": {
     "test": "gulp"
